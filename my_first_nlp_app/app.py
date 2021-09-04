@@ -4,11 +4,11 @@ from spacy import displacy
 import pandas as pd
 st.set_page_config(layout="wide")
 
-@st.cache(allow_output_mutation=True)
+@st.cache(allow_output_mutation=True) #замена значения данных
 def load_model(name):
-    return spacy.load(name)
+    return spacy.load(name) #возврат значения из функции
 
-@st.cache(allow_output_mutation=True)
+@st.cache(allow_output_mutation=True) #замена значения данных
 def process_text(spacy_model,text):
     return spacy_model(text)
 
@@ -19,7 +19,7 @@ st.title("NER Demo")
 
 my_sentence = None
 
-my_sentence = st.text_input("Enter your sentence")
+my_sentence = st.text_input("Enter your sentence") #ввод предложения
 
 if my_sentence:
     data = []
